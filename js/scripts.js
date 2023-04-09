@@ -7,7 +7,8 @@ const outputUser = document.querySelector("#users-output");
 const clearUserBtn = document.querySelector("#clear-current-user")
 const searchTodoInput = document.querySelector("#todo-search");
 const clearSearchBtn = document.querySelector("#clear-search-btn");
-const scrollBtn = document.querySelector(".scroll");
+const scrollBtnUp = document.querySelector(".scroll-up");
+const scrollBtnDown = document.querySelector(".scroll-down");
 
 const storageTodos = JSON.parse(localStorage.getItem("todos"));
 
@@ -123,7 +124,7 @@ function renderUsers () {
       <button class="user-todos-button">${user.name}</button> 
    `
    })
-   outputUser.innerHTML +=`<button id="clear-current-user">Clear current user</button>`
+   // outputUser.innerHTML +=`<button id="clear-current-user">Clear current user</button>`
 
    const userButtons = [...document.querySelectorAll(".user-todos-button")];
 
@@ -164,10 +165,17 @@ clearSearchBtn.onclick = () => {
    );
 }
 
-scrollBtn.onclick = () => {
-   todoInput.scrollBy({
-      top: 100,
-      left: 100,
-      behavior: "smooth",
+scrollBtnUp.onclick = () => {
+   todoInput.scrollIntoView({
+      block: "start",
+      inline: "nearest",
+      behavior: "smooth"
+   })
+}
+scrollBtnDown.onclick = () => {
+   outputTodo.scrollIntoView({
+      block: "end",
+      inline: "nearest",
+      behavior: "smooth"
    })
 }
