@@ -51,7 +51,7 @@ main{
    padding: 5px 10px;
    font-size: 20px;
 }
-#todo-creation{
+#todo-creation, #todo-search{
    width:90%;
    font-family: 'Marck Script', cursive;
    font-size: 18px;
@@ -67,7 +67,7 @@ main{
    font-size: 14px;
 }
 
-.input-container{
+.input-container, .search-container{
    width:80%;
    height: 30px;
    min-width: 250px;
@@ -76,6 +76,16 @@ main{
    gap:20px;
    margin: auto;
 }
+.search-container{
+   width:50%;
+   height: 30px;
+   min-width: 250px;
+   display: grid;
+   grid-template-columns: 2fr 0.5fr;
+   gap:20px;
+   margin: 30px auto 15px;
+}
+
 .line{
    width:97%;
    height: 2px;
@@ -122,5 +132,5 @@ main{
    grid-template-columns: 1fr 3fr;
    justify-content: center;
    gap: 30px;
-   margin: 50px 0;
+   margin: 30px 0;
 }
